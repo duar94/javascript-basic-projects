@@ -1,0 +1,185 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: #1a1f21;
+  font-family: 'Helvetica Neue', sans-serif;
+  overflow: auto;
+  transition: background 0.7s cubic-bezier(.77,0,.18,1);
+}
+
+/* Contenedor que ocupa toda la pantalla */
+.pantalla-inicial {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+  background: transparent;
+  transition: opacity 0.5s;
+}
+
+/* Contenedor interno de los círculos - SIEMPRE CUADRADO */
+.contenedor-circulos {
+  position: relative;
+  width: min(90vw, 90vh, 500px);
+  height: min(90vw, 90vh, 500px);
+  aspect-ratio: 1 / 1;
+  max-width: 500px;
+  max-height: 500px;
+}
+
+/* Estilo base de los círculos */
+.circulo {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: #f7f5eb;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1.2rem, 4vw, 2rem);
+  font-weight: 300;
+  color: #1a1f21;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: transform 0.7s cubic-bezier(.77,0,.18,1), opacity 0.5s;
+  will-change: transform, opacity;
+  z-index: 3;
+}
+
+/* Posiciones relativas */
+.circulo-uno {
+  top: 20%;
+  left: 15%;
+}
+
+.circulo-dos {
+  bottom: 35%;
+  right: 15%;
+}
+
+/* Animación de escalado */
+.circulo.expandido {
+  transform: scale(12);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Fondo animado */
+body.fondo-circulo {
+  background: #f7f5eb;
+  transition: background 0.7s cubic-bezier(.77,0,.18,1);
+}
+
+/* Pantalla final */
+.pantalla-final {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: #f7f5eb;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s;
+}
+
+.pantalla-final.visible {
+  display: flex;
+  animation: aparecer 0.7s;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.circulo-grande {
+  width: min(90vw, 90vh, 600px);
+  height: min(90vw, 90vh, 600px);
+  border-radius: 50%;
+  border: 1px solid #d3d3d3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f7f5eb;
+  color: #1a1f21;
+  font-size: clamp(1.2rem, 3vw, 2.2rem);
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .pantalla-inicial {
+    padding: 1rem;
+  }
+  .circulo {
+    width: 130px;
+    height: 130px;
+    font-size: clamp(1rem, 5vw, 1.2rem);
+    padding: 0.5rem;
+  }
+  .circulo-uno {
+    top: 18%;
+    left: 10%;
+  }
+  .circulo-dos {
+    bottom: 32%;
+    right: 10%;
+  }
+  .circulo-grande {
+    width: min(95vw, 95vh, 350px);
+    height: min(95vw, 95vh, 350px);
+    font-size: clamp(1rem, 5vw, 1.2rem);
+    padding: 1rem;
+  }
+}
+
+@media (max-height: 600px) and (orientation: landscape) {
+  .circulo {
+    width: 100px;
+    height: 100px;
+  }
+  .circulo-grande {
+    width: min(70vw, 70vh, 300px);
+    height: min(70vw, 70vh, 300px);
+    font-size: clamp(1rem, 3vw, 1.2rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .contenedor-circulos {
+    width: 500px;
+    height: 500px;
+  }
+  .circulo {
+    width: 225px;
+    height: 225px;
+    font-size: 2rem;
+  }
+  .circulo-uno {
+    top: 5%;
+    left: 10%;
+  }
+  .circulo-dos {
+    bottom: 15%;
+    right: 10%;
+  }
+  .circulo-grande {
+    width: 600px;
+    height: 600px;
+    font-size: 2.2rem;
+  }
+}

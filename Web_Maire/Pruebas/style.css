@@ -1,0 +1,20 @@
+.contenedor-centro {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.circulo-central {
+  width: 200px;
+  height: 200px;
+  aspect-ratio: 1/1;
+  background: #acef91;
+  border-radius: 50%;
+  box-shadow: 0 0 40px #0002;
+  transition: width 0.4s ease, height 0.4s ease;
+  will-change: width, height;
+}

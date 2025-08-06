@@ -1,0 +1,307 @@
+.macbook-pro {
+  background-color: #f6f5ec;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.macbook-pro .div {
+  background-color: #f6f5ec;
+  width: 1512px;
+  height: 989px;
+  position: relative;
+}
+
+.macbook-pro .overlap {
+  position: absolute;
+  width: 561px;
+  height: 558px;
+  top: 236px;
+  left: 475px;
+}
+
+.macbook-pro .en-maire-somos {
+  position: absolute;
+  width: 561px;
+  top: 126px;
+  left: 0;
+  font-family: "Albert Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #1e2428;
+  font-size: 47px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.macbook-pro .text-wrapper {
+  font-family: "Albert Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #1e2428;
+  font-size: 47px;
+  letter-spacing: 0;
+}
+
+.macbook-pro .span {
+  font-family: "Albert Sans-Italic", Helvetica;
+  font-style: italic;
+}
+
+.macbook-pro .ellipse {
+  position: absolute;
+  width: 558px;
+  height: 558px;
+  top: 0;
+  left: 3px;
+  border-radius: 279px;
+  border: 1.11px solid;
+  border-color: #d1cfc0;
+}
+
+.macbook-pro .MAIRE {
+  position: absolute;
+  width: 104px;
+  height: 25px;
+  top: 33px;
+  left: 30px;
+}
+
+.macbook-pro .group {
+  position: absolute;
+  width: 52px;
+  height: 45px;
+  top: 881px;
+  left: 731px;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: #d0cfc0;
+}
+
+.macbook-pro .overlap-group {
+  position: relative;
+  width: 22px;
+  height: 26px;
+  top: 10px;
+  left: 16px;
+}
+
+.macbook-pro .line {
+  width: 1px;
+  height: 25px;
+  top: 0;
+  left: 11px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.macbook-pro .img {
+  width: 11px;
+  height: 9px;
+  top: 16px;
+  left: 0;
+  position: absolute;
+  object-fit: cover;
+}
+
+.macbook-pro .line-2 {
+  width: 11px;
+  height: 9px;
+  top: 16px;
+  left: 10px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.macbook-pro .div-wrapper {
+  position: absolute;
+  width: 108px;
+  height: 39px;
+  top: 33px;
+  left: 1374px;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: #d1cfc0;
+}
+
+.macbook-pro .text-wrapper-2 {
+  position: absolute;
+  top: 8px;
+  left: 19px;
+  font-family: "Albert Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #1e2428;
+  font-size: 16px;
+  letter-spacing: -0.16px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.macbook-pro .text-wrapper-3 {
+  position: absolute;
+  top: 42px;
+  left: 942px;
+  font-family: "Albert Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #1e2428;
+  font-size: 16px;
+  letter-spacing: -0.16px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.macbook-pro .text-wrapper-4 {
+  position: absolute;
+  top: 42px;
+  left: 1106px;
+  font-family: "Albert Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #1e2428;
+  font-size: 16px;
+  letter-spacing: -0.16px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.macbook-pro .text-wrapper-5 {
+  position: absolute;
+  top: 42px;
+  left: 1200px;
+  font-family: "Albert Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #1e2428;
+  font-size: 16px;
+  letter-spacing: -0.16px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.macbook-pro .text-wrapper-6 {
+  position: absolute;
+  top: 42px;
+  left: 1022px;
+  font-family: "Albert Sans-Regular", Helvetica;
+  font-weight: 400;
+  color: #1e2428;
+  font-size: 16px;
+  letter-spacing: -0.16px;
+  line-height: normal;
+  white-space: nowrap;
+}
+/* Inject original CSS here */
+
+/* Additional styles */
+body {
+  font-family: "Albert Sans", sans-serif;
+  color: #1e2428;
+  line-height: 1.5;
+}
+
+.macbook-pro {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 33px 30px;
+}
+
+.logo {
+  width: 104px;
+  height: 25px;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.main-nav a {
+  color: #1e2428;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: -0.16px;
+}
+
+.contact-button {
+  padding: 8px 19px;
+  border: 1px solid #d1cfc0;
+  border-radius: 5px;
+  color: #1e2428;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: -0.16px;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero {
+  text-align: center;
+  max-width: 561px;
+  position: relative;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 47px;
+  font-weight: 400;
+}
+
+.hero em {
+  font-style: italic;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 558px;
+  height: 558px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1.11px solid #d1cfc0;
+  z-index: 0;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.scroll-to-top {
+  width: 52px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #d0cfc0;
+  border-radius: 5px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -1,0 +1,84 @@
+/* Fichero: css/styles.css (CORREGIDO) */
+
+:root {
+    --background-color: #1e2428;
+    --foreground-color: #f6f5ec;
+    --text-color: #1e2428;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    overscroll-behavior: none;
+}
+
+/* El contenedor 'sticky' no cambia */
+#hero-container {
+    height: 100vh;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+}
+
+/* --- CAMBIO PRINCIPAL AQUÍ --- */
+/* Ambas capas hijas ahora son absolutas para un control total del apilamiento. */
+#lottie-wrapper,
+#text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Usamos flex para centrar el contenido DENTRO de cada capa */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* La capa de la animación va detrás */
+#lottie-wrapper {
+    z-index: 1;
+}
+
+/* La capa del texto va delante, asegurando su visibilidad */
+#text-overlay {
+    z-index: 10;
+    text-align: center;
+    color: var(--text-color);
+    opacity: 0; /* JS controla la opacidad */
+    transition: opacity 0.4s ease-in-out;
+    padding: 0 20px; /* Evita que el texto toque los bordes en pantallas pequeñas */
+}
+/* ----- FIN DEL CAMBIO ----- */
+
+
+/* El resto de los estilos no necesitan cambios */
+lottie-player {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+#text-overlay h1 {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.25;
+    font-weight: 500;
+}
+
+#text-overlay span {
+    display: block;
+}
+
+#scroll-content {
+    height: 200vh;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+}
