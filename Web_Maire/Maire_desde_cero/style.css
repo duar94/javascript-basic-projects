@@ -499,7 +499,8 @@ body.scroll-active {
     color: #2C3E50;
 }
 
-.scroll-active .menu-nav .menu-items div {
+.scroll-active .menu-nav .menu-items div,
+.scroll-active .menu-items div {
     color: #2C3E50;
 }
 
@@ -548,4 +549,75 @@ body.scroll-active {
         font-size: 2.3rem;
         line-height: 1.4;
     }
+}
+/* ✅ HAMBURGUESA: Cambio de colores en segunda pantalla */
+.scroll-active .menu-toggle {
+    border-color: #2C3E50; /* Borde del botón hamburguesa */
+}
+
+.scroll-active .menu-toggle span {
+    background-color: #2C3E50; /* Líneas del hamburguesa */
+}
+
+/* ✅ MENÚ DESPLEGABLE: Cambio de fondo en segunda pantalla */
+.scroll-active .menu-items {
+    background-color: #F6F5EC; /* Fondo igual que la pantalla final */
+    border: 0.125rem solid #1E2428; /* ✅ BORDE OSCURO como la primera pantalla */
+    border-radius: 0.3125rem; /* 5px = 0.3125rem */
+    box-shadow: 0 0.25rem 0.9375rem rgba(30, 36, 40, 0.2); /* Sombra con color oscuro */
+    z-index: 2000; /* Superposición alta */
+}
+
+/* ✅ ITEMS DEL MENÚ: Solo cambio de color de texto */
+.scroll-active .menu-items .filosofa,
+.scroll-active .menu-items .servicios,
+.scroll-active .menu-items .acerca-de,
+.scroll-active .menu-items .preguntas-frecuentes {
+    color: #2C3E50; /* Solo cambio de color de texto */
+    border: none; /* Eliminar cualquier borde */
+}
+
+/* ✅ CONTACTO: Mantiene su borde pero cambia color */
+.scroll-active .menu-items .contacto {
+    color: #2C3E50;
+    border-color: #2C3E50; /* Solo el contacto mantiene borde */
+}
+
+/* Hover en segunda pantalla - SIN fondo */
+.scroll-active .menu-items .filosofa:hover,
+.scroll-active .menu-items .servicios:hover,
+.scroll-active .menu-items .acerca-de:hover,
+.scroll-active .menu-items .preguntas-frecuentes:hover {
+    background-color: rgba(30, 36, 40, 0.08); /* ✅ HOVER con color oscuro sutil */
+    color: #1E2428; /* ✅ Texto más oscuro en hover */
+    border-radius: 0.1875rem; /* 3px = 0.1875rem */
+    transform: translateY(-0.0625rem); /* -1px = -0.0625rem - ligero levantamiento */
+    transition: all 0.3s ease;
+}
+
+.scroll-active .menu-items .contacto:hover {
+    background-color: rgba(30, 36, 40, 0.08); /* ✅ HOVER con color oscuro sutil */
+    color: #1E2428; /* ✅ Texto más oscuro en hover */
+    border-color: #1E2428; /* ✅ Borde más definido en hover */
+    transform: translateY(-0.0625rem); /* -1px = -0.0625rem - ligero levantamiento */
+    box-shadow: 0 0.125rem 0.5rem rgba(30, 36, 40, 0.15); /* Sombra sutil en hover */
+    transition: all 0.3s ease;
+}
+
+/* ✅ TRANSICIONES SUAVES */
+.menu-toggle {
+    transition: all 0.8s ease;
+}
+
+.menu-toggle span {
+    transition: all 0.8s ease;
+}
+
+.menu-items {
+    transition: all 0.3s ease, background-color 0.8s ease, border-color 0.8s ease;
+    z-index: 1500; /* ✅ ASEGURAR superposición en primera pantalla también */
+}
+
+.filosofa, .acerca-de, .preguntas-frecuentes, .servicios, .contacto {
+    transition: color 0.8s ease, background-color 0.3s ease; /* Solo transición de color y fondo */
 }
