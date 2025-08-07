@@ -79,7 +79,8 @@ body.scroll-active {
 /* Efectos hover */
 .contacto:hover, .filosofa:hover, .acerca-de:hover, 
 .preguntas-frecuentes:hover, .servicios:hover {
-    background-color: #d1cfc026;
+    background-color: #ffffff1a; /* Sin cambio de fondo */
+    opacity: 1; /* Sutil cambio de opacidad */
 }
 
 /* Botón hamburguesa */
@@ -559,13 +560,23 @@ body.scroll-active {
     background-color: #2C3E50; /* Líneas del hamburguesa */
 }
 
-/* ✅ MENÚ DESPLEGABLE: Cambio de fondo en segunda pantalla */
-.scroll-active .menu-items {
-    background-color: #F6F5EC; /* Fondo igual que la pantalla final */
-    border: 0.125rem solid #1E2428; /* ✅ BORDE OSCURO como la primera pantalla */
-    border-radius: 0.3125rem; /* 5px = 0.3125rem */
-    box-shadow: 0 0.25rem 0.9375rem rgba(30, 36, 40, 0.2); /* Sombra con color oscuro */
-    z-index: 2000; /* Superposición alta */
+/* ✅ MENÚ DESPLEGABLE EN SEGUNDA PANTALLA - SOLO para móviles/tablets */
+@media (max-width: 60rem) {
+    .scroll-active .menu-items {
+        background-color: #F6F5EC; /* ✅ Fondo igual que la pantalla final */
+        border: 0.125rem solid #1E2428; /* ✅ Borde oscuro como primera pantalla */
+        border-radius: 0.3125rem; /* 5px = 0.3125rem */
+        box-shadow: 0 0.25rem 0.9375rem rgba(30, 36, 40, 0.25); /* Sombra más definida */
+        z-index: 3000; /* ✅ Z-index muy alto para superponerse al círculo final */
+    }
+}
+
+/* ✅ MENÚ HORIZONTAL EN SEGUNDA PANTALLA - SOLO para desktop */
+@media (min-width: 60.1rem) {
+    .scroll-active .menu-items {
+        background-color: transparent; /* ✅ Sin fondo en horizontal */
+        border: none; /* ✅ Sin borde en horizontal */
+    }
 }
 
 /* ✅ ITEMS DEL MENÚ: Solo cambio de color de texto */
@@ -580,10 +591,10 @@ body.scroll-active {
 /* ✅ CONTACTO: Mantiene su borde pero cambia color */
 .scroll-active .menu-items .contacto {
     color: #2C3E50;
-    border-color: #2C3E50; /* Solo el contacto mantiene borde */
+    border-color: #1E2428; /* ✅ Borde oscuro en segunda pantalla */
 }
 
-/* Hover en segunda pantalla - SIN fondo */
+/* ✅ HOVER EN SEGUNDA PANTALLA */
 .scroll-active .menu-items .filosofa:hover,
 .scroll-active .menu-items .servicios:hover,
 .scroll-active .menu-items .acerca-de:hover,
@@ -602,22 +613,4 @@ body.scroll-active {
     transform: translateY(-0.0625rem); /* -1px = -0.0625rem - ligero levantamiento */
     box-shadow: 0 0.125rem 0.5rem rgba(30, 36, 40, 0.15); /* Sombra sutil en hover */
     transition: all 0.3s ease;
-}
-
-/* ✅ TRANSICIONES SUAVES */
-.menu-toggle {
-    transition: all 0.8s ease;
-}
-
-.menu-toggle span {
-    transition: all 0.8s ease;
-}
-
-.menu-items {
-    transition: all 0.3s ease, background-color 0.8s ease, border-color 0.8s ease;
-    z-index: 1500; /* ✅ ASEGURAR superposición en primera pantalla también */
-}
-
-.filosofa, .acerca-de, .preguntas-frecuentes, .servicios, .contacto {
-    transition: color 0.8s ease, background-color 0.3s ease; /* Solo transición de color y fondo */
 }
