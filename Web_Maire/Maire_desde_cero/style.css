@@ -8,8 +8,17 @@ html, body {
   height: 100%;
   font-family: 'Albert Sans', sans-serif;
   background-color: #1E2428;
-  overflow: auto;
-  transition: background 0.7s cubic-bezier(.77,0,.18,1);
+  overflow-x: hidden; /* ✅ CORREGIDO: hidden en lugar de hidder */
+  transition: background-color 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+body:not(.scroll-active) {
+    overflow-y: hidden; /* Sin scroll vertical en primera pantalla */
+}
+
+body.scroll-active {
+    overflow-y: auto; /* Permitir scroll en segunda pantalla */
+    background-color: #F6F5EC;
 }
 
 /* Header y Navegación */
@@ -100,6 +109,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .grupo-circulos {
@@ -372,4 +382,170 @@ html, body {
 
 .menu-items {
     will-change: transform, opacity;
+}
+
+
+
+/* Sección pantalla final */
+.pantalla-final {
+    position: fixed;
+    top: 100vh;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F6F5EC;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 500;
+}
+
+.pantalla-final.visible {
+    top: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.circulo-final {
+    width: min(80vw, 35rem);
+    height: min(80vw, 35rem);
+    max-width: 45rem;
+    max-height: 45rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff1a;
+    border: 2px solid #d1cfc0;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px #0000000d;
+    padding: 3rem;
+    transform: scale(0.8);
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.pantalla-final.visible .circulo-final {
+    transform: scale(1);
+}
+
+.circulo-final p {
+    font-size: clamp(0.9rem, 2.5vw, 1.8rem); /* Tamaño responsive que se adapta */
+    line-height: 1.3; /* Reducir espacio entre líneas */
+    color: #2C3E50;
+    font-weight: 400;
+    margin: 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease 0.2s;
+    max-width: 100%; /* Asegurar que no se desborde */
+    word-wrap: break-word; /* Romper palabras largas si es necesario */
+    hyphens: auto; /* Permitir guiones automáticos */
+    padding: 0 1rem; /* Espaciado interno para no tocar los bordes */
+}
+
+.pantalla-final.visible .circulo-final p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilos para texto em */
+.circulo-final p em {
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* Transición del body para cambio de fondo */
+body {
+    overflow-x: hidden;
+    transition: background-color 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+body:not(.scroll-active) {
+    overflow-y: hidden;
+}
+
+body.scroll-active {
+    background-color: #F6F5EC;
+}
+
+/* Transición de los círculos originales */
+.circulos {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);}
+
+.circulos.hidden {
+    opacity: 0;
+    transform: scale(0.8) translateY(-100px);
+}
+
+/* Transición del header */
+.MAIRE, .menu-nav {
+    transition: all 0.8s ease;
+    z-index: 1000; /* Asegurar que estén por encima */
+}
+
+.scroll-active .MAIRE,
+.scroll-active .menu-nav {
+    color: #2C3E50;
+}
+
+.scroll-active .menu-nav .menu-items div {
+    color: #2C3E50;
+}
+
+.scroll-active .menu-nav .contacto {
+    border-color: #2C3E50;
+    color: #2C3E50;
+}
+
+.scroll-active .menu-toggle span {
+    background-color: #2C3E50;
+}
+
+/* Media queries responsive */
+
+@media (max-width: 48rem) {
+    .circulo-final {
+        width: min(85vw, 25rem);
+        height: min(85vw, 25rem);
+        padding: 1.5rem;
+    }
+    .circulo-final p {
+        font-size: 1.5rem;
+        line-height: 1.3;
+        padding: 0 1rem;
+    }
+}
+
+/* Para tablets (agregar nueva media query) */
+@media (min-width: 48.1rem) and (max-width: 60rem) {
+    .circulo-final p {
+        font-size: 2.5rem; /* ✅ NUEVO: tamaño intermedio para tablets */
+        line-height: 1.3;
+    }
+}
+
+@media (min-width: 60.1rem) and (max-width: 74.9rem) {
+    .circulo-final p {
+        font-size: 2.5rem; /* ✅ CORREGIDO: tamaño para pantallas medianas */
+        line-height: 1.3;
+    }
+}
+
+/* Para pantallas muy grandes */
+@media (min-width: 75rem) {
+    .circulo-final p {
+        font-size: 2.3rem;
+        line-height: 1.4;
+    }
 }
